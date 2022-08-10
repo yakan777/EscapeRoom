@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,7 +116,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &69939803
+=======
+--- !u!1 &506505670
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +128,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 69939807}
   - component: {fileID: 69939806}
   - component: {fileID: 69939805}
@@ -214,6 +223,11 @@ GameObject:
   - component: {fileID: 73811534}
   - component: {fileID: 73811533}
   - component: {fileID: 73811532}
+=======
+  - component: {fileID: 506505673}
+  - component: {fileID: 506505672}
+  - component: {fileID: 506505671}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -221,21 +235,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!81 &73811532
+=======
+--- !u!81 &506505671
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 73811531}
   m_Enabled: 1
 --- !u!20 &73811533
+=======
+  m_GameObject: {fileID: 506505670}
+  m_Enabled: 1
+--- !u!20 &506505672
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 73811531}
+=======
+  m_GameObject: {fileID: 506505670}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -271,13 +299,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< HEAD
 --- !u!4 &73811534
+=======
+--- !u!4 &506505673
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 73811531}
+=======
+  m_GameObject: {fileID: 506505670}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -285,7 +321,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &2077423319
+=======
+--- !u!1 &660984866
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,8 +333,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 2077423321}
   - component: {fileID: 2077423320}
+=======
+  - component: {fileID: 660984868}
+  - component: {fileID: 660984867}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -302,13 +347,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!108 &2077423320
+=======
+--- !u!108 &660984867
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 2077423319}
+=======
+  m_GameObject: {fileID: 660984866}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
@@ -340,13 +393,21 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+<<<<<<< HEAD
 --- !u!4 &2077423321
+=======
+--- !u!4 &660984868
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 2077423319}
+=======
+  m_GameObject: {fileID: 660984866}
+>>>>>>> 05a5cd9d16fc32bc62e835464e840e9499bea9ec
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
