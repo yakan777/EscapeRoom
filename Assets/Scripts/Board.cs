@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Door : MonoBehaviour, IPointerClickHandler
+public class Board : MonoBehaviour, IPointerClickHandler
 {
     bool isOpen;//開いてる状態か
     public bool isOpenIn;//内開きかなのか
