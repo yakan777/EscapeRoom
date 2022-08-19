@@ -5,9 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    public float gravity;
+    public float jumpSpeed;
+    public float jumpHeight;
+    public GroundCheck ground;
+
     private Animator anim=null;
     private Rigidbody2D rb=null;
-    // Start is called before the first frame update
+    private bool isGround=false;
+    private bool isJump=false;
+    private float jumpPos=0.0f;
     void Start()
     {
         anim=GetComponent<Animator>();
@@ -15,28 +22,56 @@ public class Player : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float horizontalkey=Input.GetAxis("Horizontal");
-        float xSpeed=0.0f;
+    void FixedUpdate()
+          {
+          isGround = ground.IsGround();
 
-        if(horizontalkey>0)
-        {
-            transform.localScale=new Vector3(5,5,5);
-            anim.SetBool("run",true);
-            xSpeed=speed;
-        }
-        else if(horizontalkey<0){
-            transform.localScale=new Vector3(-5,5,5);
-            anim.SetBool("run",true);
-            xSpeed=-speed;
-        }
-        else{
-            anim.SetBool("run",false);
-            xSpeed=0.0f;
-        }
-        rb.velocity=new Vector2(xSpeed,rb.velocity.y);
+          float horizontalKey = Input.GetAxis("Horizontal");
+          float xSpeed = 0.0f;
+          float ySpeed = -gravity;
+          float verticalKey = Input.GetAxis("Jump");
 
-    }
-}
+          if (isGround)
+          {
+              if (verticalKey > 0)
+              {
+                  ySpeed = jumpSpeed;
+                  jumpPos = transform.position.y;
+                  isJump = true;
+              }
+              else
+              {
+                  isJump = false;
+              }
+          }
+          else if (isJump)
+          {
+              if (verticalKey > 0 && jumpPos + jumpHeight > transform.position.y)
+              {
+                  ySpeed = jumpSpeed;
+              }
+              else
+              {
+                  isJump = false;
+              }
+          }
+          if (horizontalKey > 0)
+          {
+              transform.localScale = new Vector3(4, 4, 4);
+              anim.SetBool("run", true);
+              xSpeed = speed;
+          }
+          else if (horizontalKey < 0)
+          {
+              transform.localScale = new Vector3(-4, 4, 4);
+              anim.SetBool("run", true);
+              xSpeed = -speed;
+          }
+          else
+          {
+              anim.SetBool("run", false);
+              xSpeed = 0.0f;
+          }
+          rb.velocity = new Vector2(xSpeed, ySpeed);
+      }
+ }
