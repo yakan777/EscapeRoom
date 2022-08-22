@@ -27,8 +27,6 @@ public class SlotItem : MonoBehaviour, IPointerClickHandler
 
             //クリックしたアイテムを選択状態にする
             isSelect = !isSelect;
-            // float alpha;
-            // alpha = isSelect ? 1f : 0.4f;
             image.color = new Color(1f, 1f, 1f, 1f);
             ItemSlots.instance.selectItem = this;
             Debug.Log("アイテム選択");
