@@ -288,9 +288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1391296353}
   m_ConfineScreenEdges: 1
-  m_Damping: 0
+  m_Damping: 1
 --- !u!114 &1126719174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7788944, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12483,7 +12483,7 @@ GameObject:
   - component: {fileID: 1391296354}
   - component: {fileID: 1391296353}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ScrollCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12499,7 +12499,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12514,10 +12514,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
+    - - {x: 208.73145, y: 24.65465}
+      - {x: -10.755632, y: 25.183323}
+      - {x: -11.804309, y: -4.9541297}
+      - {x: 208.69377, y: -4.2714443}
 --- !u!4 &1391296354
 Transform:
   m_ObjectHideFlags: 0
@@ -12771,7 +12771,7 @@ Transform:
   m_GameObject: {fileID: 1581458577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: -1.85, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -12935,8 +12935,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   gravity: 9.8
-  jumpSpeed: 6
-  jumpHeight: 6
+  jumpSpeed: 10
+  jumpHeight: 9
   jumpLimitTime: 3
   ground: {fileID: 659770402}
   head: {fileID: 1507113489}
