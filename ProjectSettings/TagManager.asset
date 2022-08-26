@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - DeadArea
   - HitArea
+  - FallFloor
   layers:
   - Default
   - TransparentFX

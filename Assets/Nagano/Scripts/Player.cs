@@ -1,6 +1,7 @@
  using System.Collections;
  using System.Collections.Generic;
  using UnityEngine;
+ using UnityEngine.SceneManagement;
 
  public class Player : MonoBehaviour
  {
@@ -22,6 +23,7 @@
      private Rigidbody2D rb = null;
      private CapsuleCollider2D capcol = null;
      private SpriteRenderer sr = null;
+     //private MoveObject moveObj = null;
      private bool isGround = false;
      private bool isJump = false;
      private bool isHead = false;
@@ -36,7 +38,12 @@
      private float beforeKey = 0.0f;
      private float continueTime = 0.0f;
      private float blinkTime = 0.0f;
+     private float count = 0;
      private string enemyTag = "Enemy";
+     private string deadAreaTag = "DeadArea";
+     private string hitAreaTag = "HitArea";
+     private string moveFloorTag = "MoveFloor";
+     private string fallFloorTag = "FallFloor";
      #endregion
 
      void Start()
@@ -267,6 +274,7 @@
      public void ContinuePlayer()
      {
           isDown = false;
+          SceneManager.LoadScene("2DGameOver");
           anim.Play("stand");
           isJump = false;
           isOtherJump = false;
@@ -275,44 +283,84 @@
      }
 
      #region//接触判定
-     private void OnCollisionEnter2D(Collision2D collision)
-     {
-          if (collision.collider.tag == enemyTag)
-          {
-              //踏みつけ判定になる高さ
-              float stepOnHeight = (capcol.size.y * (stepOnRate / 100f));
+  private void OnCollisionEnter2D(Collision2D collision)
+    {
+        bool enemy = (collision.collider.tag == enemyTag);
+        bool moveFloor = (collision.collider.tag == moveFloorTag);
+        bool fallFloor = (collision.collider.tag == fallFloorTag);
 
-              //踏みつけ判定のワールド座標
-              float judgePos = transform.position.y - (capcol.size.y / 2f) + stepOnHeight;
+        if (enemy || moveFloor || fallFloor)
+        {
+            //踏みつけ判定になる高さ
+            float stepOnHeight = (capcol.size.y * (stepOnRate / 100f));
 
-              foreach (ContactPoint2D p in collision.contacts)
-              {
-                  if (p.point.y < judgePos)
-                  {
-                      ObjectCollision o = collision.gameObject.GetComponent<ObjectCollision>();
+            //踏みつけ判定のワールド座標
+            float judgePos = transform.position.y - (capcol.size.y / 2f) + stepOnHeight;
 
-                       if (o != null)
-                      {
-                          otherJumpHeight = o.boundHeight;    //踏んづけたものから跳ねる高さを取得する
-                          o.playerStepOn = true;        //踏んづけたものに対して踏んづけた事を通知する
-                          jumpPos = transform.position.y; //ジャンプした位置を記録する
-                          isOtherJump = true;
-                          isJump = false;
-                          jumpTime = 0.0f;
-                      }
-                      else
-                      {
-                          Debug.Log("ObjectCollisionが付いてないよ!");
-                      }
-                  }
-                  else
-                  {
-                      anim.Play("damage");
-                      isDown = true;
-                      break;
-                  }
-              }
-          }
-     }
-     #endregion
- }
+            foreach (ContactPoint2D p in collision.contacts)
+            {
+                if (p.point.y < judgePos)
+                {
+                    if (enemy || fallFloor)
+                    {
+                        ObjectCollision o = collision.gameObject.GetComponent<ObjectCollision>();
+                        if (o != null)
+                        {
+                            if (enemy)
+                            {
+                                otherJumpHeight = o.boundHeight;    //踏んづけたものから跳ねる高さを取得する
+                                o.playerStepOn = true;        //踏んづけたものに対して踏んづけた事を通知する
+                                jumpPos = transform.position.y; //ジャンプした位置を記録する
+                                isOtherJump = true;
+                                isJump = false;
+                                jumpTime = 0.0f;
+			    }
+			    else if(fallFloor)
+			    {
+                                o.playerStepOn = true;
+			    }
+                        }
+                        else
+                        {
+                            Debug.Log("ObjectCollisionが付いてないよ!");
+                        }
+		    }
+		    /*else if(moveFloor)
+		    {
+                        moveObj = collision.gameObject.GetComponent<MoveObject>();
+                    }*/
+                }
+                else
+                {
+                    if (enemy)
+                    {
+                        anim.Play("damage");
+                        isDown = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+     private void OnTriggerEnter2D(Collider2D collision)
+{
+        if(collision.tag == deadAreaTag)
+	{
+            SceneManager.LoadScene("2DGameOver");
+	}
+	else if(collision.tag == hitAreaTag)
+	{
+            anim.Play("damage");
+            isDown = true;
+            isDown=false;
+            SceneManager.LoadScene("2DGameOver");
+            /*count += Time.deltaTime;
+            if (count >= 1.0f)
+            {
+                SceneManager.LoadScene("2DGameOver");
+            }*/
+        }
+    }
+    #endregion
+}
