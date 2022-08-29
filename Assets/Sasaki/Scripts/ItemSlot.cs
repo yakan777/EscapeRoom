@@ -17,8 +17,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public ItemSlots itemList;//取得後に入るアイテムリスト
     public void OnPointerClick(PointerEventData eventData)
     {
+        ClickEffect();
         gameObject.SetActive(false);
         ItemSlots.instance.PickUpItem(this);
+    }
+    public virtual void ClickEffect()
+    {
+        Debug.Log("※オーバーライドしてません");
     }
     //作成中
     // public bool UseItem()
