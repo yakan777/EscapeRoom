@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Nagano/Scenes/NorthRoom.unity
+    guid: 2658d407c1bfab441845f8cf6cf3cd81
+  - enabled: 1
     path: Assets/Nagano/Scenes/Load.unity
     guid: 75097007f50e678459507892c667ac33
   - enabled: 1

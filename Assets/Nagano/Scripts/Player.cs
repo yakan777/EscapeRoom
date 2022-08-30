@@ -33,6 +33,7 @@
      private bool isContinue = false;
      private float jumpPos = 0.0f;
      private float otherJumpHeight = 0.0f;
+     private float otherJumpSpeed = 0.0f;
      private float dashTime = 0.0f;
      private float jumpTime = 0.0f;
      private float beforeKey = 0.0f;
@@ -44,6 +45,7 @@
      private string hitAreaTag = "HitArea";
      private string moveFloorTag = "MoveFloor";
      private string fallFloorTag = "FallFloor";
+     private string jumpStepTag = "JumpStep";
      #endregion
 
      void Start()
@@ -57,6 +59,10 @@
 
      private void Update()
      {
+        if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.Z)){
+            SceneManager.LoadScene("NorthRoom");
+        }
+
           if (isContinue)
           {
               //明滅　ついている時に戻る
@@ -134,7 +140,7 @@
 
                 if (canHeight && canTime && !isHead)
                 {
-                    ySpeed = jumpSpeed;
+                    ySpeed = otherJumpSpeed;
                     jumpTime += Time.deltaTime;
                 }
                 else
@@ -288,8 +294,9 @@
         bool enemy = (collision.collider.tag == enemyTag);
         bool moveFloor = (collision.collider.tag == moveFloorTag);
         bool fallFloor = (collision.collider.tag == fallFloorTag);
+        bool jumpStep = (collision.collider.tag == jumpStepTag);
 
-        if (enemy || moveFloor || fallFloor)
+        if (enemy || moveFloor || fallFloor || jumpStep)
         {
             //踏みつけ判定になる高さ
             float stepOnHeight = (capcol.size.y * (stepOnRate / 100f));
@@ -301,14 +308,15 @@
             {
                 if (p.point.y < judgePos)
                 {
-                    if (enemy || fallFloor)
+                    if (enemy || fallFloor ||jumpStep)
                     {
                         ObjectCollision o = collision.gameObject.GetComponent<ObjectCollision>();
                         if (o != null)
                         {
-                            if (enemy)
+                            if (enemy || jumpStep)
                             {
                                 otherJumpHeight = o.boundHeight;    //踏んづけたものから跳ねる高さを取得する
+                                otherJumpSpeed= o.jumpSpeed;
                                 o.playerStepOn = true;        //踏んづけたものに対して踏んづけた事を通知する
                                 jumpPos = transform.position.y; //ジャンプした位置を記録する
                                 isOtherJump = true;

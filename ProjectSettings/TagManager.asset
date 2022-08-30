@@ -9,6 +9,7 @@ TagManager:
   - DeadArea
   - HitArea
   - FallFloor
+  - JumpStep
   layers:
   - Default
   - TransparentFX
