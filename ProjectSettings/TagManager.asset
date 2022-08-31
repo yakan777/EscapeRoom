@@ -10,6 +10,7 @@ TagManager:
   - HitArea
   - FallFloor
   - JumpStep
+  - ItemCheck
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class WeightDrop : MonoBehaviour
     {
         Vector2 UnityChan  = target.transform.position;
         float dis = Vector2.Distance(UnityChan,this.transform.position);
-        Debug.Log(dis);
+        //Debug.Log(dis);
 
         if(dis < weightDistance){
             SphereGravity();
