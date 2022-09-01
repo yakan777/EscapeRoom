@@ -113,7 +113,7 @@ using System.Collections;
 
                 GameObject item=Instantiate(prefab,transform.position+new Vector3(0f,0.1f,0f),Quaternion.identity);
                 Rigidbody2D rb2d=item.GetComponent<Rigidbody2D>();
-                rb2d.AddForce(new Vector2(-2f,7f),ForceMode2D.Impulse);
+                rb2d.AddForce(new Vector2(-2f,9f),ForceMode2D.Impulse);
 
             }
             else
