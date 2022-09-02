@@ -6,34 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Nagano/Scenes/NorthRoom.unity
-    guid: 2658d407c1bfab441845f8cf6cf3cd81
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DFungus.unity
-    guid: 8b378e097f468244db67b12c5a1a8b3e
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DFungus2.unity
-    guid: c48485145b630e943a7252a46b884b7f
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DFungus3.unity
-    guid: 24480daf86e43234585e98be77924b6e
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DFungus4.unity
-    guid: 220ac84709cf9ea4bb68d02d9fc58b71
-  - enabled: 1
-    path: Assets/Nagano/Scenes/Load.unity
-    guid: 75097007f50e678459507892c667ac33
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DScroll.unity
-    guid: 6cff41c70d262514ea066af05d7f42bf
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DGameOver.unity
-    guid: f72d42339a2438747b878f03499550c0
-  - enabled: 1
-    path: Assets/Nagano/Scenes/2DClear.unity
-    guid: 4d5e5bc639105c84a86b9de943e3a665
-=======
     path: Assets/Sasaki/Scenes/WestRoom.unity
     guid: 753707382d3c36e44b449240917fd9ab
   - enabled: 1
@@ -48,5 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CentralRoom.unity
     guid: f05ab0c31b8c6214aa07bfa1baabd676
->>>>>>> org
   m_configObjects: {}
