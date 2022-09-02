@@ -6,6 +6,7 @@ using TMPro;
 public class StickButton : MonoBehaviour
 {
     //クリックしたらstickの長さを伸ばす
+    //
     [SerializeField] GameObject Stick;
     [SerializeField] TMP_Text numberText;
     int number = 1;
