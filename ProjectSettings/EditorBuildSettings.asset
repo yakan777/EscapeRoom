@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Nagano/Scenes/NorthRoom.unity
     guid: 2658d407c1bfab441845f8cf6cf3cd81
   - enabled: 1
@@ -32,4 +33,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nagano/Scenes/2DClear.unity
     guid: 4d5e5bc639105c84a86b9de943e3a665
+=======
+    path: Assets/Sasaki/Scenes/WestRoom.unity
+    guid: 753707382d3c36e44b449240917fd9ab
+  - enabled: 1
+    path: Assets/Matsuoka/Scenes/EastRoom.unity
+    guid: cd9f45cdefc6b5447b2a24cfca423325
+  - enabled: 1
+    path: Assets/Nagatsu/Scenes/SouthRoom.unity
+    guid: 23ce64d860bdb444f809ba7083fb25fd
+  - enabled: 1
+    path: Assets/Nagano/Scenes/NorthRoom.unity
+    guid: 2658d407c1bfab441845f8cf6cf3cd81
+  - enabled: 1
+    path: Assets/Scenes/CentralRoom.unity
+    guid: f05ab0c31b8c6214aa07bfa1baabd676
+>>>>>>> org
   m_configObjects: {}
