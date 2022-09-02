@@ -4,8 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
+  - Ground
+  - Enemy
+  - DeadArea
+  - HitArea
+  - FallFloor
+  - JumpStep
+  - ItemCheck
+=======
   - DoorBoard
   - DoorHole
+>>>>>>> org
   layers:
   - Default
   - TransparentFX
@@ -40,6 +50,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+<<<<<<< HEAD
+  - name: TileMap
+    uniqueID: 3399231905
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 496420275
+    locked: 0
+=======
+  - name: Default
+    uniqueID: 0
+    locked: 0
+>>>>>>> org
