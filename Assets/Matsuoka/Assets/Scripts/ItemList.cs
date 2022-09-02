@@ -11,7 +11,8 @@ public class ItemList : MonoBehaviour
     {
         item = ItemGenerater.instance.Spawn(itemType);
     }
-    public void OnClickObj(){
+    public void OnClickObj()
+    {
         ItemBox.instance.SetItem(item);
         gameObject.SetActive(false);
     }
