@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FungusScene1 : MonoBehaviour
+public class ClearCheck2D : MonoBehaviour
 {
-    public void nextFungusScene1(){
-        FadeManager.Instance.LoadScene("2DFungusScroll",0f);
-    }
+    public float clearTime;
     // Start is called before the first frame update
     void Start()
     {
+       // coinTime = 0.0f;
 
     }
 
@@ -18,5 +17,11 @@ public class FungusScene1 : MonoBehaviour
     void Update()
     {
 
+               clearTime += Time.deltaTime;
+
+        if (clearTime >= 4.0f)
+        {
+            SceneManager.LoadScene("NorthRoom");
+        }
     }
 }

@@ -203,14 +203,14 @@
           float xSpeed = 0.0f;
           if (horizontalKey > 0)
           {
-              transform.localScale = new Vector3(5, 5, 5);
+              transform.localScale = new Vector3(4.5f, 4.5f, 4.5f);
               isRun = true;
               dashTime += Time.deltaTime;
               xSpeed = speed;
           }
           else if (horizontalKey < 0)
           {
-              transform.localScale = new Vector3(-5, 5, 5);
+              transform.localScale = new Vector3(-4.5f, 4.5f, 4.5f);
               isRun = true;
               dashTime += Time.deltaTime;
               xSpeed = -speed;
@@ -279,13 +279,14 @@
      /// </summary>
      public void ContinuePlayer()
      {
-          isDown = false;
-          SceneManager.LoadScene("2DGameOver");
-          anim.Play("stand");
+          isDown = true;
+          //SceneManager.LoadScene("2DGameOver");
+            FadeManager.Instance.LoadScene("2DGameOver",0.05f);
+          //anim.Play("stand");
           isJump = false;
           isOtherJump = false;
           isRun = false;
-          isContinue = true;
+          //isContinue = true;
      }
 
      #region//接触判定
@@ -355,14 +356,14 @@
 {
         if(collision.tag == deadAreaTag)
 	{
-            SceneManager.LoadScene("2DGameOver");
+            FadeManager.Instance.LoadScene("2DGameOver",0.3f);
 	}
 	else if(collision.tag == hitAreaTag)
 	{
             anim.Play("damage");
             isDown = true;
-            isDown=false;
-            SceneManager.LoadScene("2DGameOver");
+            //isFadeManager.Instance.LoadSceneDown=false;
+            FadeManager.Instance.LoadScene("2DGameOver",0.3f);
             /*count += Time.deltaTime;
             if (count >= 1.0f)
             {

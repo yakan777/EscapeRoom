@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
 
         if (coinTime >= 4.0f)
         {
-            SceneManager.LoadScene("2DScroll");
+            SceneManager.LoadScene("2DFungusScroll");
         }
     }
 }
