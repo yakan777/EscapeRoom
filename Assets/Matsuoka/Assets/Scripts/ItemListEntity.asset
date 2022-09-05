@@ -23,9 +23,9 @@ MonoBehaviour:
       type: 3}
   - type: 2
     sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
-    zoomObj: {fileID: 8037278238334125177, guid: 56f4ae5ef509ad94994da96984e05d99,
+    zoomObj: {fileID: 6514789309117926001, guid: d997300e92722914bad2d419f7c775eb,
       type: 3}
   - type: 3
     sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
-    zoomObj: {fileID: 349272853087706854, guid: 60a8738d6ae63f341a31cfb806fe21a0,
+    zoomObj: {fileID: 1394337193628926447, guid: 9ab336e4e01e5ac4ebf396dcd82a8ce9,
       type: 3}
