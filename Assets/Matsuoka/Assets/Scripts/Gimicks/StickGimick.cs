@@ -6,11 +6,13 @@ public class StickGimick : MonoBehaviour
 {
     [SerializeField] StickButton[] stickButtons;
     [SerializeField] int[] correctNumbers;
+    [SerializeField] GameObject appearItem;
     public void CheckClear()
     {
         if(IsClear())
         {
             Debug.Log("OK");
+            appearItem.SetActive(true);
         }
     }
     bool IsClear()
