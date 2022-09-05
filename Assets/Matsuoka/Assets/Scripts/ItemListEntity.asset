@@ -15,7 +15,17 @@ MonoBehaviour:
   itemList:
   - type: 1
     sprite: {fileID: 21300000, guid: 140f931ceb31f2140b8870b1c2e457ed, type: 3}
-    zoomObj: {fileID: 7872088420645894581, guid: 0322d057b7923fe4580a352d17792f42, type: 3}
+    zoomObj: {fileID: 7872088420645894581, guid: 0322d057b7923fe4580a352d17792f42,
+      type: 3}
   - type: 0
     sprite: {fileID: 21300000, guid: 7738c30bf19772a4581587f95766c631, type: 3}
-    zoomObj: {fileID: 5561083688173446264, guid: b591943dd3c8fd8488e4043b6ec004fa, type: 3}
+    zoomObj: {fileID: 5561083688173446264, guid: b591943dd3c8fd8488e4043b6ec004fa,
+      type: 3}
+  - type: 2
+    sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
+    zoomObj: {fileID: 8037278238334125177, guid: 56f4ae5ef509ad94994da96984e05d99,
+      type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
+    zoomObj: {fileID: 349272853087706854, guid: 60a8738d6ae63f341a31cfb806fe21a0,
+      type: 3}
