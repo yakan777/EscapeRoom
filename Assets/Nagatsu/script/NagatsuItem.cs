@@ -6,7 +6,7 @@ public class NagatsuItem
 {
     public enum Type
     {
-        Key,
+        Bar,
         Spray,
    
 

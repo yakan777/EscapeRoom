@@ -19,6 +19,8 @@ public class NagatsuItemGenerator : MonoBehaviour
     {
         foreach (NagatsuItem item in itemListEntity.itemList)
         {
+            Debug.Log(item.type);
+            Debug.Log("toutatu");
             if (item.type == type)
             {
                 return new NagatsuItem(item.type, item.sprite, item.zoomObj);
