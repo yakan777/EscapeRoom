@@ -15,7 +15,6 @@ public class NagatsuItemList : MonoBehaviour
     public void OnClickObj()
     {
         NagatsuItemBox.instance.SetItem(nagatsuItem);
-        gameObject.SetActive(false);
     }
 
 

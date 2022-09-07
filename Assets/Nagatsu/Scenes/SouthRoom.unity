@@ -2024,6 +2024,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &155301938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1751480086967751553, guid: 07ddfa5244cf89f45ae4b2c310d65c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 299878421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!28 &159522316
 Texture2D:
   m_ObjectHideFlags: 0
@@ -5637,8 +5643,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.060921777, y: -0.93872356, z: 0.25285283, w: 0.22616845}
-  m_LocalPosition: {x: 2.2631016, y: 7.8090487, z: 11.369948}
+  m_LocalRotation: {x: -0.0073571703, y: 0.89874405, z: -0.43815187, w: -0.015101018}
+  m_LocalPosition: {x: 3.463724, y: 11.42739, z: 6.6100073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7990,12 +7996,73 @@ Texture2D:
     offset: 0
     size: 0
     path: 
+--- !u!1 &823596254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 07ddfa5244cf89f45ae4b2c310d65c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862544325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &823596255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 07ddfa5244cf89f45ae4b2c310d65c1e,
     type: 3}
   m_PrefabInstance: {fileID: 1862544325}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &823596256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823596254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &823596257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823596254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 823596258}
+          m_TargetAssemblyTypeName: CoffinGimick, Assembly-CSharp
+          m_MethodName: Futa
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &823596258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823596254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e5502752c2b2c4c839b5c27e36b01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lib: {fileID: 1641046879}
 --- !u!28 &825995239
 Texture2D:
   m_ObjectHideFlags: 0
@@ -10686,8 +10753,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1106406152}
-          m_TargetAssemblyTypeName: ObjClick, Assembly-CSharp
+        - m_Target: {fileID: 1106406157}
+          m_TargetAssemblyTypeName: NagatsuItemList, Assembly-CSharp
           m_MethodName: OnClickObj
           m_Mode: 1
           m_Arguments:
@@ -10698,7 +10765,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1106406152
+--- !u!114 &1106406157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10707,10 +10774,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1106406149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 618d72fceedbeb9469f7d01b550d9e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 448936d1b7e7af5489be99438503632e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1106406149}
+  itemtype: 0
 --- !u!28 &1122979248
 Texture2D:
   m_ObjectHideFlags: 0
@@ -15140,6 +15207,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640684527}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1641046879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1751480086967751553, guid: 07ddfa5244cf89f45ae4b2c310d65c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862544325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!28 &1642148188
 Texture2D:
   m_ObjectHideFlags: 0
@@ -17643,12 +17716,73 @@ Texture2D:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1908555635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 07ddfa5244cf89f45ae4b2c310d65c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 299878421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1908555636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 07ddfa5244cf89f45ae4b2c310d65c1e,
     type: 3}
   m_PrefabInstance: {fileID: 299878421}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1908555637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908555635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1908555638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908555635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1908555639}
+          m_TargetAssemblyTypeName: CoffinGimick, Assembly-CSharp
+          m_MethodName: Futa
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1908555639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908555635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e5502752c2b2c4c839b5c27e36b01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lib: {fileID: 155301938}
 --- !u!28 &1924955397
 Texture2D:
   m_ObjectHideFlags: 0

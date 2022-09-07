@@ -5,7 +5,8 @@ using UnityEngine;
 public class ObjClick : MonoBehaviour
 {
     public GameObject obj;
-    public void OnClickObj(){
+    public void OnClickObj()
+    {
         Debug.Log("click");
     }
 }
