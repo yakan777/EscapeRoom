@@ -5,9 +5,9 @@ using UnityEngine;
 public class MoveCameraClick : MonoBehaviour
 {
     [SerializeField] MoveCamera moveCamera;
-    [SerializeField] GameObject camera;
+    [SerializeField] GameObject MoveToCamera;
     public void OnClickObj()
     {
-        moveCamera.OnClickMoveCamera(camera.transform.position,camera.transform.rotation);
+        moveCamera.OnClickMoveCamera(MoveToCamera.transform.position,MoveToCamera.transform.rotation);
     }
 }

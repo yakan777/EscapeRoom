@@ -10,6 +10,7 @@ public class ItemList : MonoBehaviour
     void Start()
     {
         item = ItemGenerater.instance.Spawn(itemType);
+        Debug.Log(item.type);
     }
     public void OnClickObj()
     {
