@@ -21,7 +21,7 @@ public class ClearCheck2D : MonoBehaviour
 
         if (clearTime >= 4.0f)
         {
-            SceneManager.LoadScene("NorthRoom");
+            SceneManager.LoadScene("CentralRoom");
         }
     }
 }
