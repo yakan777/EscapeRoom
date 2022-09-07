@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: "\u30DC\u30B9"
+  nameText: "\u30D6\u30E9\u30C3\u30C7\u30A3\u3061\u3083\u3093"
   nameColor: {r: 1, g: 0.3726415, b: 0.8109825, a: 1}
   soundEffect: {fileID: 0}
   portraits:
@@ -525,8 +525,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1290526701}
-  selectedCommands:
-  - {fileID: 1290526707}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
