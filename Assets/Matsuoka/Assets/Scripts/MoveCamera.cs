@@ -46,4 +46,17 @@ public class MoveCamera : MonoBehaviour
         }
 
     }
+
+    public void OnClickMoveCamera(Vector3 cameraPosition, Quaternion cameraRotation)
+    {
+        cameras[0].transform.position = cameraPosition;
+        cameras[0].transform.rotation = cameraRotation;
+        for (int i = 1; i < cameras.Length; i++)
+        {
+            if (cameras[0].transform.position == cameras[i].transform.position)
+            {
+                cameraNumber=i;
+            }
+        }
+    }
 }

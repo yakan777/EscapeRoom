@@ -15,7 +15,21 @@ MonoBehaviour:
   itemList:
   - type: 1
     sprite: {fileID: 21300000, guid: 140f931ceb31f2140b8870b1c2e457ed, type: 3}
-    zoomObj: {fileID: 7872088420645894581, guid: 0322d057b7923fe4580a352d17792f42, type: 3}
+    zoomObj: {fileID: 7872088420645894581, guid: 0322d057b7923fe4580a352d17792f42,
+      type: 3}
   - type: 0
     sprite: {fileID: 21300000, guid: 7738c30bf19772a4581587f95766c631, type: 3}
-    zoomObj: {fileID: 5561083688173446264, guid: b591943dd3c8fd8488e4043b6ec004fa, type: 3}
+    zoomObj: {fileID: 5561083688173446264, guid: b591943dd3c8fd8488e4043b6ec004fa,
+      type: 3}
+  - type: 2
+    sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
+    zoomObj: {fileID: 6514789309117926001, guid: d997300e92722914bad2d419f7c775eb,
+      type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
+    zoomObj: {fileID: 1394337193628926447, guid: 9ab336e4e01e5ac4ebf396dcd82a8ce9,
+      type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
+    zoomObj: {fileID: 1394337193628926447, guid: 9ab336e4e01e5ac4ebf396dcd82a8ce9,
+      type: 3}

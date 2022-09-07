@@ -8,6 +8,9 @@ public class Item
     {
         Key,
         Wine,
+        LeftClipboard,
+        RightClipboard,
+
     }
 
     public Type type;
