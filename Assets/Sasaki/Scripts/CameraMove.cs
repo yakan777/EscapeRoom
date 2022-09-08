@@ -4,43 +4,58 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
+    //シングルトン化
+    public static CameraMove instance;
+    void Awake()
+    {
+        if(instance == null){
+            instance = this;
+        }
+    }
+
     public bool isZoom;
     Vector3 preZoomPos;//ズーム前の位置
     Vector3 preZoomRot;//ズーム前の回転
     public GameObject movePanel;//左右移動のパネル
-    public Transform target;
+    Collider targetCol;//ズーム対象のコライダー
+    public Transform cameraPos;//中央のカメラ位置
     void Start()
     {
-        // preZoomPos = transform.position;
+        preZoomPos = transform.position;
         // preZoomRot = transform.rotation;
     }
 
     void Update()
     {
         //aキー押したらターゲットをズームする
-        if (Input.GetKeyDown("a")) Zoom();
+        if (Input.GetKeyDown("a") && isZoom) ZoomOff();
     }
-    public void Zoom()
-    {
+    public void Zoom(Transform target,Collider targetCol){
+        if(this.targetCol == null){
+            this.targetCol = targetCol;
+            this.targetCol.enabled = false;
+        }
+        //移動パネルを表示非表示切り替え
+        movePanel.SetActive(isZoom);
         isZoom = !isZoom;
-        //左右移動パネルを表示、非表示切り替え
-        movePanel.SetActive(!isZoom);
 
-        if (isZoom)
-        {
-            //ズーム前の位置と回転を保存
-            preZoomPos = transform.position;
-            preZoomRot = transform.eulerAngles;
-            //ターゲット前に移動してカメラを向ける
-            transform.position = target.position + target.forward * 3;
-            float angle = Vector3.SignedAngle(transform.forward, -target.forward, transform.up);
-            transform.Rotate(0, angle, 0);
+        transform.SetParent(target);
+        transform.localScale = Vector3.one;
+        transform.localPosition = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
+    }
+    public void ZoomOff(){
+        if(this.targetCol != null){
+            this.targetCol.enabled = true;
+            this.targetCol = null;
         }
-        else
-        {
-            //ズーム前の位置と向きに変更
-            transform.position = preZoomPos;
-            transform.eulerAngles = preZoomRot;
-        }
+        //移動パネルを表示非表示切り替え
+        movePanel.SetActive(isZoom);
+        isZoom = !isZoom;
+
+        transform.SetParent(cameraPos);
+        transform.localScale = Vector3.one;
+        transform.localPosition = preZoomPos;
+        transform.localEulerAngles = Vector3.zero;
     }
 }
