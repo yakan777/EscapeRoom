@@ -17125,7 +17125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1106317795}
         m_TargetAssemblyTypeName: RotateCamera, Assembly-CSharp
-        m_MethodName: RightRotate
+        m_MethodName: LeftRotate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24576,7 +24576,7 @@ Transform:
   m_GameObject: {fileID: 6194885123391720551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2, y: 0.15, z: 0.5}
-  m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6194885124754464941}
@@ -24607,6 +24607,7 @@ GameObject:
   - component: {fileID: 6194885123391720571}
   - component: {fileID: 6194885123391720570}
   - component: {fileID: 6194885123391720549}
+  - component: {fileID: 6194885123391720572}
   m_Layer: 0
   m_Name: EyeRight
   m_TagString: Untagged
@@ -24664,6 +24665,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6194885123391720551}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6194885123391720572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194885123391720551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6eb0bca7c79d94994bb26d29958e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &6194885123695622594
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25713,7 +25726,7 @@ Transform:
   m_GameObject: {fileID: 6194885124771558987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: 0.15, z: 0.5}
-  m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6194885124754464941}
@@ -25744,6 +25757,7 @@ GameObject:
   - component: {fileID: 6194885124771558991}
   - component: {fileID: 6194885124771558990}
   - component: {fileID: 6194885124771558985}
+  - component: {fileID: 6194885124771558992}
   m_Layer: 0
   m_Name: EyeLeft
   m_TagString: Untagged
@@ -25801,6 +25815,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6194885124771558987}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6194885124771558992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194885124771558987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6eb0bca7c79d94994bb26d29958e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6194885124832423712
 GameObject:
   m_ObjectHideFlags: 0
