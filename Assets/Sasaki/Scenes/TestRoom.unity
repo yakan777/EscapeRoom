@@ -4382,7 +4382,6 @@ Transform:
   m_Children:
   - {fileID: 516565939}
   - {fileID: 1146377841}
-  - {fileID: 2786532692137805107}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5586,6 +5585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516565939}
+  - component: {fileID: 516565940}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -5607,9 +5607,23 @@ Transform:
   m_Children:
   - {fileID: 1686975648}
   - {fileID: 335972074}
+  - {fileID: 2786532692137805107}
   m_Father: {fileID: 386714324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &516565940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516565938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fda718c87ccd334b8861557ebaef526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpenIn: 1
 --- !u!28 &520031805
 Texture2D:
   m_ObjectHideFlags: 0
@@ -9973,7 +9987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921032022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.87, y: 0.38, z: 2.623}
+  m_LocalPosition: {x: 3.412, y: 0.598, z: 2.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22860,24 +22874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &496597004497404215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8976197739279603246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff50a7890aba6d34fb13861fed714224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctNumbers: 00000000000000000000000000000000
-  passwardButtons:
-  - {fileID: 1551971788044646903}
-  - {fileID: 9168261522847672858}
-  - {fileID: 7650017660431736093}
-  - {fileID: 2561863798978232036}
 --- !u!4 &953945684746269661
 Transform:
   m_ObjectHideFlags: 0
@@ -23259,7 +23255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8976197739279603246}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.2, z: -0.55}
+  m_LocalPosition: {x: -0.4, y: 0.19999999, z: -0.099999964}
   m_LocalScale: {x: 0.68, y: 0.136, z: 0.010880001}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -23267,7 +23263,7 @@ Transform:
   - {fileID: 953945684746269661}
   - {fileID: 1741625643425678554}
   - {fileID: 5876278601210488611}
-  m_Father: {fileID: 386714324}
+  m_Father: {fileID: 516565939}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &3242602968514134950
@@ -23330,8 +23326,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 496597004497404215}
-          m_TargetAssemblyTypeName: Passward, Assembly-CSharp
+        - m_Target: {fileID: 8976197739279603247}
+          m_TargetAssemblyTypeName: KinkoPassCheck, Assembly-CSharp
           m_MethodName: CheckClear
           m_Mode: 1
           m_Arguments:
@@ -23431,8 +23427,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 496597004497404215}
-          m_TargetAssemblyTypeName: Passward, Assembly-CSharp
+        - m_Target: {fileID: 8976197739279603247}
+          m_TargetAssemblyTypeName: KinkoPassCheck, Assembly-CSharp
           m_MethodName: CheckClear
           m_Mode: 1
           m_Arguments:
@@ -23726,8 +23722,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 496597004497404215}
-          m_TargetAssemblyTypeName: Passward, Assembly-CSharp
+        - m_Target: {fileID: 8976197739279603247}
+          m_TargetAssemblyTypeName: KinkoPassCheck, Assembly-CSharp
           m_MethodName: CheckClear
           m_Mode: 1
           m_Arguments:
@@ -26048,8 +26044,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 496597004497404215}
-          m_TargetAssemblyTypeName: Passward, Assembly-CSharp
+        - m_Target: {fileID: 8976197739279603247}
+          m_TargetAssemblyTypeName: KinkoPassCheck, Assembly-CSharp
           m_MethodName: CheckClear
           m_Mode: 1
           m_Arguments:
@@ -26241,7 +26237,7 @@ GameObject:
   - component: {fileID: 4596546266214357683}
   - component: {fileID: 5738922704970146090}
   - component: {fileID: 2383585506218371851}
-  - component: {fileID: 496597004497404215}
+  - component: {fileID: 8976197739279603247}
   m_Layer: 0
   m_Name: PasswordPanel 1
   m_TagString: Untagged
@@ -26249,6 +26245,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8976197739279603247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976197739279603246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c921391df89e12242957f00dae07682e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 516565940}
+  correctNumbers: 01000000000000000100000000000000
+  passwardButtons:
+  - {fileID: 1551971788044646903}
+  - {fileID: 9168261522847672858}
+  - {fileID: 7650017660431736093}
+  - {fileID: 2561863798978232036}
 --- !u!33 &9110307777251721822
 MeshFilter:
   m_ObjectHideFlags: 0
