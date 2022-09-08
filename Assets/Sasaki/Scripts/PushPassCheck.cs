@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PushPassCheck : MonoBehaviour
 {
-    public RotateDoorSA door;
-    public bool isClear;
+    public RotateDoorSA door;//ドアのスクリプト
+    public bool isClear;//解除フラグ
     public static PushPassCheck instance;
-    public Color[] buttons;
+    public Color[] buttons;//各ボタンの色
     public GameObject pushButtons;
-    public Color[] passColors;
+    public Color[] passColors;//正解の色
     Renderer[] renderers;
     void Awake()
     {
         //シングルトン化
-        if(instance == null){
+        if (instance == null)
+        {
             instance = this;
         }
     }
@@ -23,22 +24,27 @@ public class PushPassCheck : MonoBehaviour
         //各ボタンの色チェック
         renderers = pushButtons.GetComponentsInChildren<Renderer>();
         //テスト中
-        for(int i=0;i<renderers.Length;i++){
+        for (int i = 0; i < renderers.Length; i++)
+        {
             buttons[i] = renderers[i].material.color;
         }
     }
     //パスワードが合ってるかチェック
-    public bool passCheck(){
+    public bool passCheck()
+    {
         bool passOk = true;
-        for(int i=0;i<passColors.Length;i++){
-            if(renderers[i].material.color != passColors[i]){
+        for (int i = 0; i < passColors.Length; i++)
+        {
+            if (renderers[i].material.color != passColors[i])
+            {
                 passOk = false;
                 // Debug.Log($"Buttos{i}:{renderers[i].material.color}");
                 // Debug.Log("Pass:"+passColors[i]);
                 break;
             }
         }
-        if(passOk){
+        if (passOk)
+        {
             isClear = true;
             door.OpenDoor();
             Debug.Log("開きました");
