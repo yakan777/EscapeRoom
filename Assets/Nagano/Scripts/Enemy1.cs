@@ -8,6 +8,7 @@ public class Enemy1 : MonoBehaviour
     [Header("重力")] public float gravity;
     [Header("画面外でも行動する")] public bool nonVisibleAct;
     [Header("接触判定")] public EnemyCollisionCheck checkCollision;
+    [Header("やられた時に鳴らすSE")] public AudioClip enemy1deadSE;
     #endregion
 
     #region//プライベート変数
@@ -70,6 +71,10 @@ public class Enemy1 : MonoBehaviour
                 rb.velocity = new Vector2(0, -gravity);
                 isDead = true;
                 col.enabled = false;
+                   if (GManager.instance != null)
+                 {
+                     GManager.instance.PlaySE(enemy1deadSE);
+                 }
                 Destroy(gameObject, 3f);
             }
             else

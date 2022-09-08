@@ -13,6 +13,8 @@ using System.Collections;
      [Header("デフォルトの残機")] public int defaultHeartNum;
      [HideInInspector] public bool isGameOver = false;
 
+     private AudioSource audioSource=null;
+
      private void Awake()
      {
          if(instance == null)
@@ -25,6 +27,11 @@ using System.Collections;
              Destroy(this.gameObject);
          }
      }
+
+     private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
      /// <summary>
      /// 残機を１つ増やす
@@ -51,4 +58,19 @@ using System.Collections;
              isGameOver = true;
          }
      }
+
+     public void PlaySE(AudioClip clip)
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+
+        }
+        else
+        {
+            Debug.Log("オーディオソースが設定されていません");
+        }
+    }
+
+
  }

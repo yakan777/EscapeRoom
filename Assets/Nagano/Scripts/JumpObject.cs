@@ -3,6 +3,7 @@ using System.Collections;
  using UnityEngine;
  public class JumpObject : MonoBehaviour
  {
+     [Header("ジャンプ台に乗った時に鳴らすSE")] public AudioClip springSE;
      private ObjectCollision oc;
      private Animator anim;
 
@@ -24,6 +25,7 @@ using System.Collections;
           if (oc.playerStepOn)
           {
               anim.SetTrigger("on");
+              GManager.instance.PlaySE(springSE);
               oc.playerStepOn = false;
           }
      }

@@ -1,16 +1,20 @@
 using System.Collections;
- using System.Collections.Generic;
- using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
- public class Enemy2 : MonoBehaviour
- {
-     [Header("攻撃オブジェクト")] public GameObject attackObj;
-     [Header("攻撃間隔")] public float interval;
-      [Header("重力")] public float gravity;
-          [Header("移動速度")] public float speed;
+public class Enemy2 : MonoBehaviour
+{
+    [Header("攻撃オブジェクト")] public GameObject attackObj;
+    [Header("攻撃間隔")] public float interval;
+    [Header("重力")] public float gravity;
+    [Header("移動速度")] public float speed;
     [Header("画面外でも行動する")] public bool nonVisibleAct;
     [Header("接触判定")] public EnemyCollisionCheck checkCollision;
+    [Header("やられた時に鳴らすSE")] public AudioClip bossDeadSE;
+    [Header("ショットSE")] public AudioClip shotSE;
     public GameObject prefab;
+    public GameObject target;
+    public float bossDistance;
 
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
@@ -19,57 +23,98 @@ using System.Collections;
     private CapsuleCollider2D col = null;
     private bool rightTleftF = false;
     private bool isDead = false;
-      private float timer;
+    private float timer;
 
-     // Start is called before the first frame update
-     void Start()
-     {
-                rb = GetComponent<Rigidbody2D>();
+    // Start is called before the first frame update
+    void Start()
+    {
+        //StartCoroutine(loop());
+
+        rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         oc = GetComponent<ObjectCollision>();
         col = GetComponent<CapsuleCollider2D>();
 
-          anim = GetComponent<Animator>();
-          if (anim == null || attackObj == null)
-          {
-              Debug.Log("設定が足りません");
-              Destroy(this.gameObject);
-          }
-          else
-          {
-              attackObj.SetActive(false);
-          }
-     }
+        anim = GetComponent<Animator>();
 
-     // Update is called once per frame
+        if (anim == null || attackObj == null)
+        {
+            Debug.Log("設定が足りません");
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            attackObj.SetActive(false);
+        }
+    }
 
-          public void Attack()
-{
-    GameObject g = Instantiate(attackObj);
-    g.transform.SetParent(transform);
-    g.transform.position = attackObj.transform.position;
-    g.transform.rotation = attackObj.transform.rotation;
-    g.SetActive(true);
-}
-     void Update()
-     {
-          AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+    // Update is called once per frame
+    /*private IEnumerator loop() {
+        // ループ
+        while (true) {
+            // 1秒毎にループします
+            yield return new WaitForSeconds(1.5f);
+            onTimer();
+        }
+    }
+    private void onTimer() {
+        // 1秒毎に呼ばれます
+       GManager.instance.PlaySE(shotSE);
+    }*/
+    public void Attack()
+    {
+        GameObject g = Instantiate(attackObj);
+        g.transform.SetParent(transform);
+        g.transform.position = attackObj.transform.position;
+        g.transform.rotation = attackObj.transform.rotation;
+        g.SetActive(true);
+    }
+    void Update()
+    {
 
-          //通常の状態
-          if (currentState.IsName("boss_stand"))
-          {
-              if(timer > interval)
-              {
-                  anim.SetTrigger("shot");
-                  timer = 0.0f;
-              }
-              else
-              {
-                  timer += Time.deltaTime;
-              }
-          }
-     }
-      void FixedUpdate()
+        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+        /*Vector2 UnityChan = target.transform.position;
+        float dis = Vector2.Distance(UnityChan, this.transform.position);
+        if (dis < bossDistance)
+        {
+            loop();
+        }
+        IEnumerator loop()
+        {
+            // ループ
+            while (true)
+            {
+                // 1秒毎にループします
+                yield return new WaitForSeconds(1.5f);
+                onTimer();
+            }
+        }
+        void onTimer()
+        {
+            // 1秒毎に呼ばれます
+            if (GManager.instance != null)
+            {
+                GManager.instance.PlaySE(shotSE);
+            }
+        }*/
+
+
+
+        //通常の状態
+        if (currentState.IsName("boss_stand"))
+        {
+            if (timer > interval)
+            {
+                anim.SetTrigger("shot");
+                timer = 0.0f;
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+        }
+    }
+    void FixedUpdate()
     {
         if (!oc.playerStepOn)
         {
@@ -106,21 +151,49 @@ using System.Collections;
             {
 
                 anim.Play("dead");
-                rb.velocity = new Vector2(0,-gravity);
+                rb.velocity = new Vector2(0, -gravity);
                 isDead = true;
                 col.enabled = false;
-                Destroy(gameObject, 0.25f);
+                if (GManager.instance != null)
+                {
+                    GManager.instance.PlaySE(bossDeadSE);
+                }
+                Destroy(gameObject, 1.5f);
 
-                GameObject item=Instantiate(prefab,transform.position+new Vector3(0f,0.1f,0f),Quaternion.identity);
-                Rigidbody2D rb2d=item.GetComponent<Rigidbody2D>();
-                rb2d.AddForce(new Vector2(-2f,9f),ForceMode2D.Impulse);
+                GameObject item = Instantiate(prefab, transform.position + new Vector3(0f, 0.1f, 0f), Quaternion.identity);
+                Rigidbody2D rb2d = item.GetComponent<Rigidbody2D>();
+                rb2d.AddForce(new Vector2(-2f, 9f), ForceMode2D.Impulse);
 
             }
             else
             {
-                transform.Rotate(new Vector3(0, 0, -3f));
+                transform.Rotate(new Vector3(0, 0, -2.5f));
             }
         }
     }
 
- }
+    /*IEnumerator loop()
+    {
+        // ループ
+        while (true)
+        {
+                  Vector2 UnityChan = target.transform.position;
+        float dis = Vector2.Distance(UnityChan, this.transform.position);
+        if (dis < bossDistance)
+        {
+            yield return new WaitForSeconds(1.5f);
+            Debug.Log("ok");
+            onTimer();
+        }
+        }
+    }
+    void onTimer()
+    {
+        // 1秒毎に呼ばれます
+        if (GManager.instance != null)
+        {
+            GManager.instance.PlaySE(shotSE);
+        }
+    }*/
+
+}

@@ -16,6 +16,9 @@
      [Header("ダッシュの速さ表現")] public AnimationCurve dashCurve;
      [Header("ジャンプの速さ表現")] public AnimationCurve jumpCurve;
      [Header("踏みつけ判定の高さの割合(%)")] public float stepOnRate;
+      [Header("ジャンプする時に鳴らすSE")] public AudioClip jumpSE;
+      [Header("敵にやられて鳴らすSE")] public AudioClip damageSE;
+      [Header("トラップにやられて鳴らすSE")] public AudioClip downSE;
      #endregion
 
      #region//プライベート変数
@@ -154,6 +157,10 @@
            {
                 if (verticalKey > 0)
                 {
+                    　　　　　　　 if(!isJump)
+                {
+ 　　　　　　　　    GManager.instance.PlaySE(jumpSE);
+                }
                     ySpeed = jumpSpeed;
                     jumpPos = transform.position.y; //ジャンプした位置を記録する
                     isJump = true;
@@ -345,6 +352,7 @@
                     {
                         anim.Play("damage");
                         isDown = true;
+                        GManager.instance.PlaySE(damageSE);
                         break;
                     }
                 }
@@ -362,6 +370,7 @@
 	{
             anim.Play("damage");
             isDown = true;
+            GManager.instance.PlaySE(downSE);
             //isFadeManager.Instance.LoadSceneDown=false;
             FadeManager.Instance.LoadScene("2DGameOver",0.3f);
             /*count += Time.deltaTime;
