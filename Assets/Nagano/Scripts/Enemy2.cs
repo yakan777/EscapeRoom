@@ -109,7 +109,7 @@ using System.Collections;
                 rb.velocity = new Vector2(0,-gravity);
                 isDead = true;
                 col.enabled = false;
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject, 0.25f);
 
                 GameObject item=Instantiate(prefab,transform.position+new Vector3(0f,0.1f,0f),Quaternion.identity);
                 Rigidbody2D rb2d=item.GetComponent<Rigidbody2D>();
@@ -118,7 +118,7 @@ using System.Collections;
             }
             else
             {
-                transform.Rotate(new Vector3(0, 0, -300));
+                transform.Rotate(new Vector3(0, 0, -3f));
             }
         }
     }
