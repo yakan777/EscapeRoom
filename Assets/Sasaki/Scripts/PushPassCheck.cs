@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PushPassCheck : MonoBehaviour
 {
-    bool canOpen;
+    public RotateDoorSA door;
+    public bool isClear;
     public static PushPassCheck instance;
     public Color[] buttons;
     public GameObject pushButtons;
@@ -32,25 +33,14 @@ public class PushPassCheck : MonoBehaviour
         for(int i=0;i<passColors.Length;i++){
             if(renderers[i].material.color != passColors[i]){
                 passOk = false;
-                // Debug.Log("まだ");
-                Debug.Log($"Buttos{i}:{renderers[i].material.color}");
-                Debug.Log("Pass:"+passColors[i]);
+                // Debug.Log($"Buttos{i}:{renderers[i].material.color}");
+                // Debug.Log("Pass:"+passColors[i]);
                 break;
             }
         }
-        if(passOk)Debug.Log("開きました");
-        return passOk;
-    }
-    public bool passCheck(Color[] colors){
-        bool passOk = true;
-        for(int i=0;i<passColors.Length;i++){
-            if(colors[i] != passColors[i]){
-                passOk = false;
-                Debug.Log("まだ");
-                Debug.Log(colors[i]);
-                break;
-            }
-            passOk = true;
+        if(passOk){
+            isClear = true;
+            door.OpenDoor();
             Debug.Log("開きました");
         }
         return passOk;

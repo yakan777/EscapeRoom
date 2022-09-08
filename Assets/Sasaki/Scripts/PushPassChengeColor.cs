@@ -18,7 +18,9 @@ public class PushPassChengeColor : MonoBehaviour,IPointerClickHandler
 
     }
     public void OnPointerClick(PointerEventData eventData){
-        material.color = material.color==white?black:white;
-        PushPassCheck.instance.passCheck();
+        if(!PushPassCheck.instance.isClear){
+            material.color = material.color==white?black:white;
+            PushPassCheck.instance.passCheck();
+        }
     }
 }
