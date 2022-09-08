@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class TestEmission : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    public Light dictionalLight;
     void Update()
     {
         if (Input.GetKeyDown("i"))
         {
             EyeLightChange.EmissionEye();
+            dictionalLight.enabled = !dictionalLight.enabled;
         }
     }
 }
