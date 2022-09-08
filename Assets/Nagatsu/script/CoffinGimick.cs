@@ -5,8 +5,17 @@ using UnityEngine;
 public class CoffinGimick : MonoBehaviour
 {
     public GameObject lib;
-    public void Futa(){
-        lib.SetActive(false);
+    public NagatsuItem.Type clearItem;
+    public void Futa()
+    {
+        bool isClear = NagatsuItemBox.instance.TryUseBar(clearItem);
+        if (isClear)
+        {
+            lib.SetActive(false);
+            GetComponent<BoxCollider>().enabled = false;
+
+        }
     }
+
 
 }

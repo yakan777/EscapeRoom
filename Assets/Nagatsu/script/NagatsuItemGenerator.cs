@@ -23,7 +23,7 @@ public class NagatsuItemGenerator : MonoBehaviour
             Debug.Log("toutatu");
             if (item.type == type)
             {
-                return new NagatsuItem(item.type, item.sprite, item.zoomObj);
+                return new NagatsuItem(item.type, item.sprite, item.zoomObj,item.hp);
             }
         }
         return null;

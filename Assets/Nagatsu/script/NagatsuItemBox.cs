@@ -57,6 +57,26 @@ public class NagatsuItemBox : MonoBehaviour
         }
         return false;
     }
+    public bool TryUseBar(NagatsuItem.Type type)
+    {
+        if (selectedSlot == null)
+        {
+            return false;
+        }
+        if (selectedSlot.GetItem().type == type)
+        {
+            selectedSlot.GetItem().hp--;
+            if (selectedSlot.GetItem().hp <= 0)
+            {
+                selectedSlot.SetItem(null);
+                selectedSlot.HideBgPanel();
+                selectedSlot = null;
+
+            }
+            return true;
+        }
+        return false;
+    }
 
     public bool SelectedSlot()
     {
