@@ -10,7 +10,8 @@ public class BossCheck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player" && spawnCount > 0){
             spawnCount--;
-            Instantiate(bossPrehab,bossSpawn.position,Quaternion.identity);
+            GameObject boss = Instantiate(bossPrehab,bossSpawn.position,Quaternion.identity);
+            boss.transform.localScale = new Vector3(1.5f,1.5f,1.0f);
         }
     }
 }
