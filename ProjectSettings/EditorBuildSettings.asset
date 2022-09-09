@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Matsuoka/Assets/Scenes/Main.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CentralRoom.unity
+    guid: f05ab0c31b8c6214aa07bfa1baabd676
+  - enabled: 1
     path: Assets/Sasaki/Scenes/WestRoom.unity
     guid: 753707382d3c36e44b449240917fd9ab
   - enabled: 0
@@ -17,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nagano/Scenes/NorthRoom.unity
     guid: 2658d407c1bfab441845f8cf6cf3cd81
-  - enabled: 1
-    path: Assets/Scenes/CentralRoom.unity
-    guid: f05ab0c31b8c6214aa07bfa1baabd676
   - enabled: 1
     path: Assets/Nagano/Scenes/2DScroll2.unity
     guid: 7ef5e7a3a1630cc4cbad92d6d1b6226f
