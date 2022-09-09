@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy2 : MonoBehaviour
 {
     [Header("攻撃オブジェクト")] public GameObject attackObj;
+    [Header("攻撃の出る位置")]public Transform bulletPos;
     [Header("攻撃間隔")] public float interval;
     [Header("重力")] public float gravity;
     [Header("移動速度")] public float speed;
@@ -63,8 +64,9 @@ public class Enemy2 : MonoBehaviour
     }*/
     public void Attack()
     {
+        Debug.Log("打った");
         GameObject g = Instantiate(attackObj);
-        g.transform.SetParent(transform);
+        // g.transform.SetParent(transform);
         g.transform.position = attackObj.transform.position;
         g.transform.rotation = attackObj.transform.rotation;
         g.SetActive(true);
@@ -120,7 +122,7 @@ public class Enemy2 : MonoBehaviour
         {
             if (sr.isVisible || nonVisibleAct)
             {
-                if (checkCollision.isOn)
+                if (checkCollision != null && checkCollision.isOn)
                 {
                     rightTleftF = !rightTleftF;
                 }
@@ -130,12 +132,12 @@ public class Enemy2 : MonoBehaviour
                 {
                     xVector = 1;
 
-                    transform.localScale = new Vector3(-1, 1, 1);
+   //                 transform.localScale = new Vector3(-1.5f, 1.5f, 1);
                 }
                 else
                 {
 
-                    transform.localScale = new Vector3(1, 1, 1);
+//                    transform.localScale = new Vector3(1.5, 1.5, 1);
 
                 }
                 rb.velocity = new Vector2(xVector * speed, -gravity);
@@ -149,6 +151,10 @@ public class Enemy2 : MonoBehaviour
         {
             if (!isDead)
             {
+                //弾の消す処理
+                for(int i=0;i<this.transform.childCount;i++){
+                    Destroy(this.transform.GetChild(i).gameObject);
+                }
 
                 anim.Play("dead");
                 rb.velocity = new Vector2(0, -gravity);

@@ -63,7 +63,7 @@
      private void Update()
      {
         if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.Z)){
-            SceneManager.LoadScene("NorthRoom");
+            SceneManager.LoadScene("2DClear");
         }
 
           if (isContinue)
