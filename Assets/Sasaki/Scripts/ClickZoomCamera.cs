@@ -18,6 +18,7 @@ public class ClickZoomCamera : MonoBehaviour,IPointerClickHandler
 
     }
     public void OnPointerClick(PointerEventData eventData){
+        Debug.Log("aaa");
         if(!gameCamera.isZoom)gameCamera.Zoom(this.transform,col);
     }
 }
