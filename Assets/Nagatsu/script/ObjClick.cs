@@ -5,8 +5,10 @@ using UnityEngine;
 public class ObjClick : MonoBehaviour
 {
     public GameObject obj;
+    NagatsuItemList nagatsuItemList;
     public void OnClickObj()
     {
-        Debug.Log("click");
+        nagatsuItemList.OnClickObj();
+        gameObject.SetActive(false);   
     }
 }
