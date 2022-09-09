@@ -120,7 +120,7 @@ public class Enemy2 : MonoBehaviour
         {
             if (sr.isVisible || nonVisibleAct)
             {
-                if (checkCollision.isOn)
+                if (checkCollision != null && checkCollision.isOn)
                 {
                     rightTleftF = !rightTleftF;
                 }
@@ -149,6 +149,10 @@ public class Enemy2 : MonoBehaviour
         {
             if (!isDead)
             {
+                //弾の消す処理
+                for(int i=0;i<this.transform.childCount;i++){
+                    Destroy(this.transform.GetChild(i).gameObject);
+                }
 
                 anim.Play("dead");
                 rb.velocity = new Vector2(0, -gravity);
