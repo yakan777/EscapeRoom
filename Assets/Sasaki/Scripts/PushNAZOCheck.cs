@@ -8,34 +8,56 @@ public class PushNAZOCheck : MonoBehaviour
     public static PushNAZOCheck instance;
     void Awake()
     {
-        if(instance == null){
+        if (instance == null)
+        {
             instance = this;
         }
     }
 
-    public enum Eye{
+    public enum Eye
+    {
         RED,
         BLUE
     }
-    public Eye[] eyes;
-    public int pushCount;
-    [HideInInspector]public bool isPush;
-    bool isClear;
+    public Eye[] eyes;//目玉
+    int pushCount;//押した回数
+    [HideInInspector] public bool isPush;//目を押してる判定
+    public bool isClear;//謎クリア判定
+    const float eyePushTime = 0.5f;//目玉が凹んでる時間
+    AudioSource audioSource;
+    [SerializeField] AudioClip correctSE;
+    [SerializeField] AudioClip pushSE;
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     //ロボットの目を押した時のコルーチン
-    public IEnumerator PushEye(GameObject clickEye){
-        isPush =true;
+    public IEnumerator PushEye(GameObject clickEye)
+    {
+        isPush = true;
         //押した色と現在回数の正解が合ってたら
-        if((clickEye.name == "EyeLeft" && eyes[pushCount] == Eye.RED) || (clickEye.name == "EyeRight" && eyes[pushCount] == Eye.BLUE)){
+        if ((clickEye.name == "EyeLeft" && eyes[pushCount] == Eye.RED) || (clickEye.name == "EyeRight" && eyes[pushCount] == Eye.BLUE))
+        {
             pushCount++;
             Debug.Log("当たり!!");
+            audioSource.PlayOneShot(pushSE);
             //最後まで目玉を押したら
-            if(eyes.Length == pushCount){
+            if (eyes.Length == pushCount)
+            {
+                yield return new WaitForSeconds(0.2f);
                 Debug.Log("クリア！！");
                 pushCount = 0;
                 isClear = true;
+                audioSource.PlayOneShot(correctSE);
             }
-        }else{
+            else
+            {
+                // audioSource.PlayOneShot(pushSE);
+            }
+        }
+        else
+        {
             pushCount = 0;
             Debug.Log("外れ");
 
@@ -43,8 +65,8 @@ public class PushNAZOCheck : MonoBehaviour
 
         //押した時の動作(少し沈んだ後、元に戻る)
         Vector3 vec = clickEye.transform.position;
-        clickEye.transform.Translate(0,0,-0.05f);
-        yield return new WaitForSeconds(1.0f);
+        clickEye.transform.Translate(0, 0, -0.05f);
+        yield return new WaitForSeconds(eyePushTime);
         clickEye.transform.position = vec;
         isPush = false;
     }
