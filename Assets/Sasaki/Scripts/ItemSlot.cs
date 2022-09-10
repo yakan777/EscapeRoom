@@ -17,7 +17,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public ItemSlots itemList;//取得後に入るアイテムリスト
     public void OnPointerClick(PointerEventData eventData)
     {
-        ClickEffect();
+        // ClickEffect();
         gameObject.SetActive(false);
         ItemSlots.instance.PickUpItem(this);
     }
