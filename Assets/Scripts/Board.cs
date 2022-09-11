@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Board : MonoBehaviour, IPointerClickHandler
 {
-    bool canOpen;//開けられるかどうか
+    public bool canOpen;//開けられるかどうか
     bool isOpen;//開いてる状態か
     public bool isOpenIn;//内開きかなのか
     float rotY;//開き具合
