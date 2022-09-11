@@ -34,7 +34,8 @@ public class SlotItem : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            item.ClickEffect(eventData.pointerClick.gameObject);
+            if (item.type == ItemSlot.TYPE.HINT) item.ClickEffect(eventData.pointerClick.gameObject);
+            if (item.type == ItemSlot.TYPE.KEY) item.ClickEffect();
         }
     }
     public void UseItem()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClickZoomCamera : MonoBehaviour,IPointerClickHandler
+public class ClickZoomCamera : MonoBehaviour, IPointerClickHandler
 {
     CameraMove gameCamera;
     Collider col;
@@ -17,8 +17,9 @@ public class ClickZoomCamera : MonoBehaviour,IPointerClickHandler
     {
 
     }
-    public void OnPointerClick(PointerEventData eventData){
-        Debug.Log("aaa");
-        if(!gameCamera.isZoom)gameCamera.Zoom(this.transform,col);
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("ズームした");
+        if (!gameCamera.isZoom) gameCamera.Zoom(this.transform, col);
     }
 }

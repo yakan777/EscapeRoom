@@ -9,7 +9,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public enum TYPE
     {
         KEY,
-        HINT
+        HINT,
+        OPEN
     }
     public TYPE type;
     public new string name;//名前

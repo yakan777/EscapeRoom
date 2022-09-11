@@ -52,6 +52,8 @@ public class PushNAZOCheck : MonoBehaviour
                 pushCount = 0;
                 isClear = true;
                 audioSource.PlayOneShot(correctSE);
+                CameraMove.instance.ZoomOff();
+                RotateRobot.instance.ClearCheck();
             }
             else
             {
