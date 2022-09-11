@@ -11,6 +11,9 @@ public class PushPassCheck : MonoBehaviour
     public GameObject pushButtons;
     public Color[] passColors;//正解の色
     Renderer[] renderers;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip correctSE;
+    [SerializeField] AudioClip pushSE;
     void Awake()
     {
         //シングルトン化
@@ -21,6 +24,7 @@ public class PushPassCheck : MonoBehaviour
     }
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         //各ボタンの色チェック
         renderers = pushButtons.GetComponentsInChildren<Renderer>();
         //テスト中
@@ -32,6 +36,7 @@ public class PushPassCheck : MonoBehaviour
     //パスワードが合ってるかチェック
     public bool passCheck()
     {
+        audioSource.PlayOneShot(pushSE);
         bool passOk = true;
         for (int i = 0; i < passColors.Length; i++)
         {
@@ -45,6 +50,7 @@ public class PushPassCheck : MonoBehaviour
         }
         if (passOk)
         {
+            audioSource.PlayOneShot(correctSE);
             isClear = true;
             door.OpenDoor();
             Debug.Log("開きました");
