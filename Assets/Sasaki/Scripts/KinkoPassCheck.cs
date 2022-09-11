@@ -8,10 +8,18 @@ public class KinkoPassCheck : MonoBehaviour
     public RotateDoorSA door;
     [SerializeField] int[] correctNumbers;
     [SerializeField] PasswardButton[] passwardButtons;
+    AudioSource audioSource;
+    [SerializeField] AudioClip pushSE;
+    [SerializeField] AudioClip correctSE;
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void CheckClear()
     {
         if (IsClear())
         {
+            audioSource.PlayOneShot(correctSE);
             Debug.Log("クリア");
             Debug.Log(passwardButtons[0].number);
             Debug.Log(passwardButtons[1].number);
@@ -21,9 +29,10 @@ public class KinkoPassCheck : MonoBehaviour
 
     public bool IsClear()
     {
-        for(int i = 0; i<passwardButtons.Length;i++)
+        audioSource.PlayOneShot(pushSE);
+        for (int i = 0; i < passwardButtons.Length; i++)
         {
-            if(passwardButtons[i].number!=correctNumbers[i])
+            if (passwardButtons[i].number != correctNumbers[i])
             {
                 return false;
             }
