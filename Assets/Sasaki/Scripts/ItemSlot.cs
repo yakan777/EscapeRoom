@@ -29,6 +29,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("※オーバーライドしてません");
     }
+    public virtual void ClickEffect(GameObject item)
+    {
+        Debug.Log("※オーバーライドしてません");
+    }
     //作成中
     // public bool UseItem()
     // {

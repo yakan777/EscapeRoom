@@ -37,4 +37,16 @@ public class ItemSlots : MonoBehaviour
         // nantoka.color = new Color(1, 1, 1, 0.4f);
         alpha.color = new Color32(255, 255, 255, 100);
     }
+    public void RemoveItem(string item)
+    {
+        foreach (GameObject i in list)
+        {
+            Debug.Log("List:" + i.GetComponent<SlotItem>().name + "item:" + item);
+            if (i.GetComponent<SlotItem>().name == item)
+            {
+                list.Remove(i);
+                return;
+            }
+        }
+    }
 }

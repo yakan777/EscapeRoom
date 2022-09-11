@@ -34,7 +34,7 @@ public class SlotItem : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            item.ClickEffect();
+            item.ClickEffect(eventData.pointerClick.gameObject);
         }
     }
     public void UseItem()

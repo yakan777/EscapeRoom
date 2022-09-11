@@ -24,9 +24,11 @@ public class PushNAZOCheck : MonoBehaviour
     [HideInInspector] public bool isPush;//目を押してる判定
     public bool isClear;//謎クリア判定
     const float eyePushTime = 0.5f;//目玉が凹んでる時間
-    AudioSource audioSource;
-    [SerializeField] AudioClip correctSE;
-    [SerializeField] AudioClip pushSE;
+    AudioSource audioSource;//オーディオソース
+    //効果音
+    [SerializeField] AudioClip correctSE;//正解
+    [SerializeField] AudioClip missSE;//間違えた
+    [SerializeField] AudioClip pushSE;//押した
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -36,12 +38,12 @@ public class PushNAZOCheck : MonoBehaviour
     public IEnumerator PushEye(GameObject clickEye)
     {
         isPush = true;
+        audioSource.PlayOneShot(pushSE);
         //押した色と現在回数の正解が合ってたら
         if ((clickEye.name == "EyeLeft" && eyes[pushCount] == Eye.RED) || (clickEye.name == "EyeRight" && eyes[pushCount] == Eye.BLUE))
         {
             pushCount++;
             Debug.Log("当たり!!");
-            audioSource.PlayOneShot(pushSE);
             //最後まで目玉を押したら
             if (eyes.Length == pushCount)
             {
@@ -60,7 +62,7 @@ public class PushNAZOCheck : MonoBehaviour
         {
             pushCount = 0;
             Debug.Log("外れ");
-
+            audioSource.PlayOneShot(missSE);
         }
 
         //押した時の動作(少し沈んだ後、元に戻る)
