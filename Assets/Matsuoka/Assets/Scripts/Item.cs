@@ -12,6 +12,7 @@ public class Item
         RightClipboard,
         Room1Pass,
         Canvas,
+        Disk,
     }
 
     public Type type;

@@ -16,6 +16,12 @@ public class MoveCameraOnClickPanel : MonoBehaviour
     Quaternion startRotation;
 
     int cameraNumber;
+
+    public static MoveCameraOnClickPanel instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         defaultPosition = cameras[0].transform.position;
@@ -39,6 +45,18 @@ public class MoveCameraOnClickPanel : MonoBehaviour
             camera.SetActive(false);
         }
         cameras[0].SetActive(true);
+    }
+
+    public void SetZoomCamera(GameObject camera)
+    {
+        cameras[0].SetActive(false);
+        camera.gameObject.SetActive(true);
+        //zoom
+    }
+
+    public void OnclickBackPanel()
+    {
+        //modoru
     }
 
 
