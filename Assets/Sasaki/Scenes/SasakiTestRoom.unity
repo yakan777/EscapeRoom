@@ -7217,7 +7217,6 @@ GameObject:
   - component: {fileID: 610429922}
   - component: {fileID: 610429921}
   - component: {fileID: 610429920}
-  - component: {fileID: 610429919}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7225,18 +7224,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &610429919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610429918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6debfb0a5b6d5449e18eab4bda1877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &610429920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27615,6 +27602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2394094192771011570}
+  - component: {fileID: 2394094192771011571}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -27639,6 +27627,20 @@ Transform:
   m_Father: {fileID: 2394094192438916001}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2394094192771011571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394094192771011569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a24499594a16e4ebbe7e1a83e1f0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movedRoom: CentralRoom
+  clearRoom: Sasaki
 --- !u!224 &2527717587142139279
 RectTransform:
   m_ObjectHideFlags: 0
