@@ -14,7 +14,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public TYPE type;
     public new string name;//名前
     public Sprite image;//画像
-    public ItemSlots itemList;//取得後に入るアイテムリスト
+    [SerializeField] protected AudioClip effectSE;//アイテム使用時の音
+    [SerializeField] protected AudioSource audioSource;
+    void Start()
+    {
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         // ClickEffect();
