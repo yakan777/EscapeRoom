@@ -10,7 +10,8 @@ public class Item
         Wine,
         LeftClipboard,
         RightClipboard,
-
+        Room1Pass,
+        Canvas,
     }
 
     public Type type;
