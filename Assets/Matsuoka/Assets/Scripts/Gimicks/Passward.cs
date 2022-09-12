@@ -6,6 +6,12 @@ public class Passward : MonoBehaviour
 {
     [SerializeField] int[] correctNumbers;
     [SerializeField] PasswardButton[] passwardButtons;
+    [SerializeField] GameObject appearItem;
+
+    void Start()
+    {
+        appearItem.SetActive(false);
+    }
     public void CheckClear()
     {
         if (IsClear())
@@ -13,7 +19,13 @@ public class Passward : MonoBehaviour
             Debug.Log("クリア");
             Debug.Log(passwardButtons[0].number);
             Debug.Log(passwardButtons[1].number);
+            PasswardAppearItem();
         }
+    }
+
+    public void PasswardAppearItem()
+    {
+        appearItem.SetActive(true);
     }
 
     public bool IsClear()

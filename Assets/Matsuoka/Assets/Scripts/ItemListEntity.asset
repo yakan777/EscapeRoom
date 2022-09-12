@@ -33,3 +33,15 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 81d275ea1fa26884abfb3c5196d67ea8, type: 3}
     zoomObj: {fileID: 1394337193628926447, guid: 9ab336e4e01e5ac4ebf396dcd82a8ce9,
       type: 3}
+  - type: 4
+    sprite: {fileID: 21300000, guid: 17e622166bb65374c834ba7fe43752e5, type: 3}
+    zoomObj: {fileID: 1599762371005751085, guid: 609ee4595659ec94288ed3c9cca1eb5f,
+      type: 3}
+  - type: 5
+    sprite: {fileID: 21300000, guid: 3ae3950fd64e0da48afc4de5aae42b58, type: 3}
+    zoomObj: {fileID: 1548282444454125309, guid: 052f24079ae97d84cb70a95832453520,
+      type: 3}
+  - type: 6
+    sprite: {fileID: 21300000, guid: ab21af733bd7db44781e03cf4710eb56, type: 3}
+    zoomObj: {fileID: 3147943456683895287, guid: 64ba85c859a60e448a67ea721dce92c7,
+      type: 3}

@@ -12,6 +12,7 @@ public class SetObj : MonoBehaviour
         bool hasItem = ItemBox.instance.TryUseItem(useItem);
         if(hasItem){
             setObject.SetActive(true);
+            GetComponent<BoxCollider>().enabled=false;
         }
     }
 
