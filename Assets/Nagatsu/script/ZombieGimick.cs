@@ -6,8 +6,6 @@ public class ZombieGimick : MonoBehaviour
 {
     public GameObject passwordnumber;
     public NagatsuItem.Type clearItem;
-    public AudioClip sound4;
-    AudioSource audioSource;
     private void Start() {
         passwordnumber.SetActive(false);
     }
@@ -17,8 +15,6 @@ public class ZombieGimick : MonoBehaviour
         {
             GetComponent<BoxCollider>().enabled = false;
             passwordnumber.SetActive(true);
-            audioSource = GetComponent<AudioSource>();
-            audioSource.PlayOneShot(sound4);
 
         }
 
