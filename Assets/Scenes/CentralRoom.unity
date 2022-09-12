@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64922a791f85d5341a0c8afc759873d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDebugDelete: 1
+  isDebugDelete: 0
   isNagatsu: 0
   isNagano: 0
   isMatsuoka: 0
@@ -1032,6 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 359232728}
+  - component: {fileID: 359232729}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -1056,6 +1057,25 @@ Transform:
   m_Father: {fileID: 1021563553}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &359232729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359232727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f33d634868177c46807f6c255d42771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextRoom: 5
+  door: {fileID: 0}
+  doorLight: {fileID: 0}
+  doorSphere: {fileID: 0}
+  lightOff: {fileID: 0}
+  lightOn: {fileID: 0}
+  clearCheckKey: 0
 --- !u!1 &397984710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1523,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1592,6 +1613,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886fb8bc609851c4baff8e4e3f7b2f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: 90
 --- !u!1 &608309452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,7 +1937,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1021563553}
-  - component: {fileID: 1021563554}
   m_Layer: 0
   m_Name: ClearDoor
   m_TagString: Untagged
@@ -1928,25 +1961,6 @@ Transform:
   m_Father: {fileID: 818545942}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1021563554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021563552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f33d634868177c46807f6c255d42771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextRoom: 5
-  door: {fileID: 0}
-  doorLight: {fileID: 0}
-  doorSphere: {fileID: 0}
-  lightOff: {fileID: 0}
-  lightOn: {fileID: 0}
-  clearCheckKey: 0
 --- !u!1 &1109212027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4209,7 +4223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2062215081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5392,7 +5406,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 534669907}
         m_TargetAssemblyTypeName: RotateCamera, Assembly-CSharp
         m_MethodName: LeftRotate
         m_Mode: 1
@@ -5574,7 +5588,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 534669907}
         m_TargetAssemblyTypeName: RotateCamera, Assembly-CSharp
         m_MethodName: RightRotate
         m_Mode: 1

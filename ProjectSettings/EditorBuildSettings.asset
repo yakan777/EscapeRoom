@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Sasaki/Scenes/WestRoom.unity
     guid: 5899ff4e7e406094ca296f07c34ac5a1
   - enabled: 1
+    path: Assets/Sasaki/Scenes/Title.unity
+    guid: b27e71c1c9d127a4c942644cc94eeac3
+  - enabled: 1
+    path: Assets/Sasaki/Scenes/GameClear.unity
+    guid: 7969fcf14916e7a46b0efa2ff4f69ab6
+  - enabled: 1
     path: Assets/Nagano/Scenes/2DScroll2.unity
     guid: 7ef5e7a3a1630cc4cbad92d6d1b6226f
   - enabled: 1
