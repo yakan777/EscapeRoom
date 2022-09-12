@@ -21,6 +21,7 @@ public class ClearCheck2D : MonoBehaviour
 
         if (clearTime >= 4.0f)
         {
+            PlayerPrefs.SetInt("Nagano",1);
             SceneManager.LoadScene("CentralRoom");
         }
     }
