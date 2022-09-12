@@ -7,9 +7,14 @@ public class StickGimick : MonoBehaviour
     [SerializeField] StickButton[] stickButtons;
     [SerializeField] int[] correctNumbers;
     [SerializeField] GameObject appearItem;
+
+    private void Start()
+    {
+        appearItem.SetActive(false);
+    }
     public void CheckClear()
     {
-        if(IsClear())
+        if (IsClear())
         {
             Debug.Log("OK");
             appearItem.SetActive(true);
@@ -17,9 +22,9 @@ public class StickGimick : MonoBehaviour
     }
     bool IsClear()
     {
-        for(int i=0;i<correctNumbers.Length;i++)
+        for (int i = 0; i < correctNumbers.Length; i++)
         {
-            if(stickButtons[i].number!=correctNumbers[i])
+            if (stickButtons[i].number != correctNumbers[i])
             {
                 return false;
             }
