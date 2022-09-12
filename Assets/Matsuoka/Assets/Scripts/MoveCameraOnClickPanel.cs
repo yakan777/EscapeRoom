@@ -72,6 +72,9 @@ public class MoveCameraOnClickPanel : MonoBehaviour
         //modoru
         cameras[0].transform.position = stackPosition;
         cameras[0].transform.rotation = stackRotation;
+        backPanel.SetActive(false);
+        rightPanel.SetActive(true);
+        leftPanel.SetActive(true);
 
     }
 
