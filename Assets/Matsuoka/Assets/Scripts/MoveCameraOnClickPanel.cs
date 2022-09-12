@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveCameraOnClickPanel : MonoBehaviour
 {
@@ -9,11 +10,16 @@ public class MoveCameraOnClickPanel : MonoBehaviour
     [SerializeField] GameObject[] room1Cameras;
     [SerializeField] GameObject[] room2Cameras;
     [SerializeField] GameObject[] room3Cameras;
+    [SerializeField] GameObject backPanel;
+    [SerializeField] GameObject rightPanel;
+    [SerializeField] GameObject leftPanel;
     Vector3 defaultPosition;
     Quaternion defaultRotation;
 
     Vector3 startPosition;
     Quaternion startRotation;
+    Vector3 stackPosition;
+    Quaternion stackRotation;
 
     int cameraNumber;
 
@@ -24,6 +30,7 @@ public class MoveCameraOnClickPanel : MonoBehaviour
     }
     void Start()
     {
+        backPanel.SetActive(false);
         defaultPosition = cameras[0].transform.position;
         defaultRotation = cameras[0].transform.rotation;
         startPosition = defaultPosition;
@@ -49,14 +56,23 @@ public class MoveCameraOnClickPanel : MonoBehaviour
 
     public void SetZoomCamera(GameObject camera)
     {
-        cameras[0].SetActive(false);
-        camera.gameObject.SetActive(true);
+        stackPosition = cameras[0].transform.position;
+        stackRotation = cameras[0].transform.rotation;
         //zoom
+        cameras[0].transform.position = camera.transform.position;
+        cameras[0].transform.rotation = camera.transform.rotation;
+
+        backPanel.SetActive(true);
+        rightPanel.SetActive(false);
+        leftPanel.SetActive(false);
     }
 
     public void OnclickBackPanel()
     {
         //modoru
+        cameras[0].transform.position = stackPosition;
+        cameras[0].transform.rotation = stackRotation;
+
     }
 
 
